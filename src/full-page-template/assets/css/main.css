@@ -1,0 +1,75 @@
+
+    @font-face{
+        font-family: 'JetBrains Mono';
+        src: url('../fonts/JetBrainsMono-Regular.eot') format('embedded-opentype'),
+            url('../fonts/JetBrainsMono-Regular.woff2') format('woff2'),
+            url('../fonts/JetBrainsMono-Regular.woff') format('woff'),
+            url('../fonts/JetBrainsMono-Regular.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    body {
+        font-family: 'JetBrains Mono' ;
+    }
+
+    .gridbox > * {
+        font-size: 2rem;
+    }
+
+    .gridbox > * > * {
+        font-size: 1rem;
+    }
+
+    .gridbox-header {
+        grid-area: header;
+        background-color: aqua;
+    }
+
+    .gridbox-sidebar {
+        grid-area: sidebar;
+        background-color: goldenrod;
+    }
+
+    .gridbox-banner {
+        grid-area: banner;
+        display: none;
+        background-color: coral;
+    }
+
+    .gridbox-main {
+        grid-area: main;
+        background-color: burlywood;
+    }
+
+    .gridbox-footer {
+        grid-area: footer;
+        background-color: darkorchid;
+    }
+
+    .gridbox {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr auto;
+        grid-template-areas:    "header"
+                                "sidebar"
+                                "main"
+                                "footer";
+    }
+
+    @media (min-width:768px){
+        .gridbox{
+            grid-template-columns: 1fr 4fr 1fr;
+            grid-template-rows: auto 1fr auto;
+            grid-template-areas:    "header header header"
+                                    "sidebar main banner"
+                                    "footer footer footer";
+        }
+
+        .gridbox-banner {
+            display: block;
+        }
+    }
+
+    
+
